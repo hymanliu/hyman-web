@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+     xmlns:tx="http://www.springframework.org/schema/tx"
+     xmlns:mvc="http://www.springframework.org/schema/mvc"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/aop 
+         http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx.xsd
+         http://www.springframework.org/schema/mvc
+         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+  <mvc:annotation-driven />
+  <context:component-scan base-package="com.hyman.web" />
+  <context:annotation-config/>    <!--开启注解 -->
+   
+   <!-- 数据源 -->
+   <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/hyman?useUnicode=true&amp;characterEncoding=utf8"/>
+    <property name="username" value="root"/>
+    <property name="password" value="123456"/>
+  </bean>
+  
+   <!-- hibernate 的 sessionFactory配置 -->
+   <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <property name="dataSource" ref="myDataSource"/>
+	<property name="annotatedClasses">
+		<list>
+			<value>com.hyman.web.bean.User</value>
+			<value>com.hyman.web.bean.Worker</value>
+		</list>
+	</property>
+       
+    <property name="hibernateProperties">
+      <value>
+        hibernate.dialect=org.hibernate.dialect.MySQLDialect
+        hibernate.hbm2ddl.auto=update
+        hibernate.show_sql=true
+        hibernate.format_sql=true
+      </value>
+    </property>
+  </bean>
+  
+   <!-- 配置事务管理  （对于hibernate的事务管理器） -->
+  <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+   <!-- 打开事务的注解支持-->
+  <tx:annotation-driven transaction-manager="transactionManager" order="200"/>
+
+<!--   <import resource="/servlet-context.xml"/> -->
+  
+</beans>  
