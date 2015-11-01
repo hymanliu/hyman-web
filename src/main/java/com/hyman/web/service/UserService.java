@@ -9,6 +9,8 @@ public interface UserService {
 
 	void save(User user);
 
+	User find(String username);
+	
 	List<User> list();
 	
 }

@@ -11,7 +11,7 @@ import com.hyman.web.dao.UserDao;
 import com.hyman.web.service.UserService;
 
 
-@Service
+@Service("userService")
 @Transactional
 public class UserServiceImpl implements UserService {
 	
@@ -26,6 +26,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> list() {
 		return userDao.findAll();
+	}
+
+	@Override
+	public User find(String username) {
+		return userDao.find(username);
 	}
 	
 	

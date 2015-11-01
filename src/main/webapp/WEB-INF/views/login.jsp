@@ -9,18 +9,12 @@
 <head>
 <base href="<%=basePath %>" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Panelo - Free Admin Template</title>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<title>this is a login demo</title>
 </head>
 <body>
 <div id="loginpanelwrap">
   	
-	<div class="loginheader">
-    <div class="logintitle"><a href="#">Panelo Admin</a></div>
-    </div>
-
      
-    <div class="loginform">
       <form action="signIn" method="post"> 
         <div class="loginform_row">
         <label>Username:</label>
@@ -33,9 +27,9 @@
         <div class="loginform_row">
         <input type="submit" class="loginform_submit" value="Login" />
         </div> 
-        <div class="clear"></div>
        </form> 
-    </div>
+       
+       <a href="signUp">注册</a>
  
 
 </div>
