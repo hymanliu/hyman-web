@@ -16,6 +16,8 @@
     <genericdao.version>1.2.0</genericdao.version>
     <slf4j.version>1.7.12</slf4j.version>
     <spring.security.version>4.0.1.RELEASE</spring.security.version>
+    <org.aspectj-version>1.8.1</org.aspectj-version>
+    <java-version>1.7</java-version>
   </properties>
   
   <repositories>
@@ -93,7 +95,7 @@
 	</dependency>
 	
 	<!-- JSR 303 with Hibernate Validator -->
-	<dependency>
+	<!-- <dependency>
 		<groupId>javax.validation</groupId>
 		<artifactId>validation-api</artifactId>
 		<version>1.0.0.GA</version>
@@ -102,7 +104,14 @@
 		<groupId>org.hibernate</groupId>
 		<artifactId>hibernate-validator</artifactId>
 		<version>${hibernate.version}</version>
-	</dependency>
+	</dependency> -->
+	
+	<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
 	
 	<dependency>
 		<groupId>commons-dbcp</groupId>
@@ -164,11 +173,6 @@
            <artifactId>jackson-mapper-asl</artifactId>
            <version>1.9.4</version>
        </dependency>
-       <dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.1.4</version>
-		</dependency>
        
        <!-- File Upload -->
 		<dependency>
@@ -206,14 +210,20 @@
 			<version>${genericdao.version}</version>
 		</dependency>
 		
+		<!-- Servlet -->
 		<dependency>
-	        <groupId>javax.servlet</groupId>
-	        <artifactId>javax.servlet-api</artifactId>
-	        <version>${javax.servlet-api.version}</version>
-	        <scope>provided</scope>
-	    </dependency>
-		
-	    <dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>7.0.47</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>jstl-api</artifactId>
 			<version>1.2</version>
