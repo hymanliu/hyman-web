@@ -1,22 +1,15 @@
 package junit.test;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hyman.web.bean.Worker;
 import com.hyman.web.service.WorkerService;
 
-public class EmployeeTest {
+
+public class EmployeeTest extends BaseJunitTest{
+	@Autowired
 	private WorkerService workerService;
-	@Before
-	public void  setUpBeforeClass() throws Exception {
-		ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
-		workerService=(WorkerService)ctx.getBean("workerService");
-		 
-	}
 
 	@Test
 	public void testSave() {
