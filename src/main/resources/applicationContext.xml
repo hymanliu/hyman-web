@@ -39,7 +39,7 @@
   
 	<bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" /> 
 	
-	<jaxrs:server id="hymanWebService" address="/hyman/api">
+	<jaxrs:server id="myService" address="/api">
         <jaxrs:features>
             <core:logging/>
         </jaxrs:features>
