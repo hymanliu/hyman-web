@@ -11,7 +11,7 @@ import com.hyman.web.dao.UserDao;
 import com.hyman.web.service.UserService;
 
 
-@Service("userService")
+@Service
 @Transactional
 public class UserServiceImpl implements UserService {
 	

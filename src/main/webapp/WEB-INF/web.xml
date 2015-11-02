@@ -53,6 +53,17 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	  
+	
+	
+	<!-- cxf -->
+  	<servlet>
+        <servlet-name>cxfServlet</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>cxfServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
   
 </web-app>
