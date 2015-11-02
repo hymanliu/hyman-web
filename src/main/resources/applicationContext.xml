@@ -52,6 +52,7 @@
     </jaxrs:server>
 	<!--   --> 
   	<import resource="classpath*:webservice-client.xml"/>
+  	<import resource="classpath*:spring-api-swagger.xml"/>
   	
   	    
 </beans>  

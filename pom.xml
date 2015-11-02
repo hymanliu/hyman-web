@@ -95,18 +95,6 @@
 		<version>${hibernate.version}</version>
 	</dependency>
 	
-	<!-- JSR 303 with Hibernate Validator -->
-	<!-- <dependency>
-		<groupId>javax.validation</groupId>
-		<artifactId>validation-api</artifactId>
-		<version>1.0.0.GA</version>
-	</dependency>
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-validator</artifactId>
-		<version>${hibernate.version}</version>
-	</dependency> -->
-	
 	<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -189,11 +177,29 @@
        </dependency>
        
        <!-- swagger -->
-       <!-- <dependency>
+        <dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
 			<version>1.5.0</version>
-		</dependency> -->
+		</dependency>
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-jaxrs</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		
+		<!-- JSR 303 with Hibernate Validator -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		
 		<!-- cxf -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
