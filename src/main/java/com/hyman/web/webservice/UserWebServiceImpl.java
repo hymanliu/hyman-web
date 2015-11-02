@@ -8,16 +8,12 @@ import com.hyman.web.service.UserService;
 
 @Component
 public class UserWebServiceImpl implements UserWebService {
-
 	@Autowired
 	UserService userService;
 	
 	public User find(String username) {
 		
-		//User user = userService.find(username);
-		
-		User user = new User();
-		user.setUserName("hyman");
+		User user = userService.find(username);
 		return user;
 	}
 
