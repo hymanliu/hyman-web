@@ -48,11 +48,18 @@
         <jaxrs:providers>
         	<ref bean="jsonProvider"/> 
         </jaxrs:providers>
-        
     </jaxrs:server>
+    
+    <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="shared" value="true"/>
+    </bean>
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager" ref="ehcache"/>
+    </bean>
+    
 	<!--   --> 
   	<import resource="classpath*:webservice-client.xml"/>
   	<import resource="classpath*:spring-api-swagger.xml"/>
-  	
+  	<import resource="classpath*:spring-api-cache.xml"/>
   	    
 </beans>  

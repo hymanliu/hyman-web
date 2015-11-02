@@ -1,6 +1,8 @@
 package com.hyman.web.webservice;
 
 
+import java.util.List;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -17,12 +19,19 @@ import com.hyman.web.bean.User;
 
 
 @Path("/user")
-@Api(tags = {"user"})
+@Api(tags = {"userWebService"})
 public interface UserWebService {
 
 	@Path("/find")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-	@ApiOperation(value="find user by username",tags = {"user"})
+	@ApiOperation(value="find user by username",tags = {"find"})
     public User find(@ApiParam @QueryParam("username") String username);
+	
+	
+	@Path("/list")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+	@ApiOperation(value="list all the users",tags = {"list"})
+    public List<User> list();
 }
