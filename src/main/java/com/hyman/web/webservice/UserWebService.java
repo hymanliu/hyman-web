@@ -25,26 +25,26 @@ public interface UserWebService {
 	@Path("/find")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-	@ApiOperation(value="find user by username",tags = {"find"})
+	@ApiOperation(value="find user by username",tags = {"UserWebService.find"})
     public User find(@ApiParam @QueryParam("username") String username);
 	
 	@Path("/findById")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-	@ApiOperation(value="find user by id",tags = {"findById"})
+	@ApiOperation(value="find user by id",tags = {"UserWebService.findById"})
     public User findById(@ApiParam @QueryParam("id") int id);
 	
 	
 	@Path("/list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-	@ApiOperation(value="list all the users",tags = {"list"})
+	@ApiOperation(value="list all the users",tags = {"UserWebService.list"})
     public List<User> list();
 	
 	@Path("/update")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-	@ApiOperation(value="update the user",tags = {"update"})
+	@ApiOperation(value="update the user",tags = {"UserWebService.update"})
 	public boolean update(@ApiParam @QueryParam("username")String username,
 			@ApiParam @QueryParam("password")String password);
 }

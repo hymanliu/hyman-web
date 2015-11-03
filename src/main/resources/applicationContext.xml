@@ -43,7 +43,8 @@
             <core:logging/>
         </jaxrs:features>
         <jaxrs:serviceBeans>
-            <bean class="com.hyman.web.webservice.UserWebServiceImpl"/>
+            <bean class="com.hyman.web.webservice.impl.UserWebServiceImpl"/>
+            <bean class="com.hyman.web.webservice.impl.TestWebServiceImpl"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
         	<ref bean="jsonProvider"/> 

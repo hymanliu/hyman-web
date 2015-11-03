@@ -1,4 +1,4 @@
-package com.hyman.web.webservice;
+package com.hyman.web.webservice.impl;
 
 
 
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.hyman.web.bean.User;
 import com.hyman.web.service.UserService;
+import com.hyman.web.webservice.UserWebService;
 
 @Component
 public class UserWebServiceImpl implements UserWebService {
