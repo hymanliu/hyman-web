@@ -9,11 +9,6 @@ public interface UserService {
 
 	void save(User user);
 
-	User find(String username);
-	
 	List<User> list();
-
-	User findById(Integer id);
-
-	User update(User user);
+	
 }

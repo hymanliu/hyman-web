@@ -9,9 +9,4 @@ import com.hyman.web.dao.UserDao;
 @Repository
 public class UserDaoImpl extends BaseDaoImpl<User, Integer> implements UserDao {
 
-	@Override
-	public User find(String username){
-		User ret = (User) getSession().createQuery("from User u where u.userName=:username").setString("username", username).uniqueResult();
-		return ret;
-	}
 }

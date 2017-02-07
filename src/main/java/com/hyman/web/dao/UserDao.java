@@ -5,5 +5,4 @@ import com.hyman.web.bean.User;
 
 public interface UserDao extends GenericDAO<User, Integer>{
 	
-	public User find(String username);
 }

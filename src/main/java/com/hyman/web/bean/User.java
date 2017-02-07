@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="T_USER")
+@XmlRootElement
 public class User {
 	
 	@Id
